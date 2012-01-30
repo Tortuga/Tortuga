@@ -1,0 +1,58 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+import javax.swing.plaf.synth.Region;
+
+
+public class Plateau extends JPanel {
+	
+	Image image,imgplateau,hexa,trouge,tvert;
+	Configuration plateau;
+	public Plateau(){
+		super();
+		this.setBackground(Color.BLACK);
+		plateau = new Configuration();
+		
+		try {
+			image = ImageIO.read(new File("images/Fondtortuga.gif"));
+			imgplateau = ImageIO.read(new File("images/Plateau.gif"));
+			hexa = ImageIO.read(new File("images/Hexagone.png"));
+			trouge = ImageIO.read(new File("images/tortue.rouge.png"));
+			tvert = ImageIO.read(new File("images/tortue.vert.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+	public void paintComponent(Graphics g) {
+		
+		g.drawImage(image, 0, 0,this.getWidth(),this.getHeight(), null);
+		drawPlateau(g);
+    }
+	
+	private void drawPlateau(Graphics g) {
+		int l = (int) ((this.getHeight()-25)/(7.*Math.sqrt(3)));
+		double xO = (this.getWidth()/2. - (7.5*l)/2.);
+		double yO = (this.getHeight()/2. - (7*l*Math.sqrt(3))/2.);
+		
+		int L = 2 * l + 2;
+		int H = (int) (l * Math.sqrt(3) + 2);
+        int k = 4,alignD =1;
+		for(int i = 0; i<7;i++){
+			for(int j = 0; j<k;j++){
+				if(i>3){alignD=3;}
+				else{alignD=i;}
+				int xA = (int) (3/2 * l * 3 + xO - j * ( 3./2. * l) + alignD * ( 3./2. * l));
+				int yA = (int) (j * ( l * Math.sqrt(3)) /2. + i * ( l * Math.sqrt(3)) /2. + alignD/3 * (i - 3) * ( l * Math.sqrt(3)) /2. + yO);
+				g.drawImage(hexa,xA ,yA ,L,H , null);
+			}
+			if(i<3){k++;}
+			else {k--;}
+		}
+	}
+}
