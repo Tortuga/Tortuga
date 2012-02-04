@@ -1,2 +1,26 @@
 Bonjour Alexandre Salvi, bienvenue dans cette jolie equipe de projet tortuga et nous esperons que cela vous plaira.
 Date d'integration: 30/01/2012
+
+Rappels sur l'utilisation de Github (une fois que tout est configuré), dans la console (Git Bash sous Windows) :
+
+- git clone git@github.com:Tortuga/Tortuga.git (juste la première fois, pour récupérer tout le projet)
+
+- git pull (pour mettre à jour, à faire à chaque fois que l'on commence à travailler sur le projet)
+
+Et une fois qu'on a fait des trucs et qu'on en est fier :
+
+- git status (pour consulter les changements fait en local)
+
+- git commit nom_du_fichier (ou commit -a pour tous envoyé d'un coup si on a la flemme)
+	note : l'éditeur vim apparait subitement, pour qu'on entre la raison du 'commit' ("j'ai fait la méthode truc","j'ai ajouté un espace pour faire genre j'ai travaillé", etc.). L'utilisation de vim est pas très intuitive, donc pour s'en servir simplement : on entre la raison du commit tout au dessus, et une fois qu'on a terminé : touche echap, et on écrit ':wq' (ca envoie un joli message après :))
+
+Et enfin, une fois que l'ON EST SUR que les changements que l'on a fait marchent :
+
+- git push (pour envoyer au Master, pour que tout le monde puisse y avoir accès)
+
+
+voilà, voilà ;)
+(et bienvenue à Alex, moi c'est Ben, j'espère qu'on s'entendra bien ! ;)) 
+
+
+
