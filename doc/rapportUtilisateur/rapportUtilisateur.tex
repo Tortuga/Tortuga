@@ -1,0 +1,90 @@
+%		TODO:
+%		- simplifier les règles
+
+
+\documentclass[a4paper, 11pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[frenchb]{babel} %ou \usepackage[francais]{babel} 
+\usepackage{url} %écrire des adresses cliquables
+\usepackage{lmodern} %changer pack de police
+\usepackage[top=3cm, bottom=3cm, left=2.7cm, right=2.7cm]{geometry} %gérer les marges
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage[babel=true]{csquotes} % csquotes va utiliser la langue définie dans babel
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.jpeg, .png , .gif, .bmp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\author{DUT Informatique - Projet Tortuga}
+\title{\textbf{Manuel Utilisateur}}
+\date{2011-2012}
+\maketitle
+%%%%%%%%
+
+
+\chapter*{Introduction}
+
+Bienvenue dans le manuel utilisateur de l'application Tortuga ! \\
+
+\tableofcontents			
+ 
+ 
+\chapter{Les règles du jeu}
+
+\section{Règles de bases}
+
+\begin{itemize}
+\item Les tortues se déplacent (avance ou saute) \textbf{toujours} vers l'avant (tout droit ou de coté), mais jamais vers l'arrière
+\item Lorsqu'une tortue en saute une autre :
+	\begin{itemize}
+	\item Si c'est une de ses tortues, rien de spécial ne se passe.
+	\item Si c'est une tortue adverse, la tortue adverse est retournée est devient neutre (désactivée).
+	\item Si c'est une tortue neutre, celle-ci redevient active et le joueur qui a réalisé le saut décide de sa nouvelle équipe.
+	\end{itemize}
+\item Un joueur gagne en désactivant toutes les tortues adverses ou en placant une de ses tortues sur la case "Home" de son adversaire :
+\end{itemize}
+\vspace{0.3cm}
+\begin{center}
+	\includegraphics[scale=0.5]{screen.png}
+\end{center}
+
+\begin{itemize}
+\item Lorsque l'on peut sauter une tortue adverse, ce saut est obligatoire.
+\item Lorsque l'on peut sauter une tortue neutre, ce saut n'est pas obligatoire !
+\item On ne peut pas arrêter un saut tant qu'un autre est possible, les sauts entamés doivent absolument arriver à leur terme (même si les tortues à sauter sont neutres\dots{})
+\item On ne peut pas sauter une de ses tortues puis une tortue adverse (et inversement).
+\item Impossible de revenir en arrière, même lors d'un saut !
+\item Après le saut d'une tortue neutre, si l'on a le choix, on peut choisir entre sauter une de ses tortues ou une tortue adverse.
+\end{itemize}
+
+\section{Variante mode éclosion}
+
+
+\chapter{Comment jouer ?}
+
+\section{Partie contre un autre joueur}
+
+\subsection{Partie simple}
+\subsection{Partie avec variante}
+
+\section{Partie contre une IA}
+
+\subsection{Partie simple}
+\subsection{Partie avec variante}
+
+
+\chapter{Récupérer l'application et spécifications minimum}
+
+\section{Application sur ordinateur}
+\section{Application mobile}
+
+
+\chapter{F.A.Q.}
+
+
+			
+\end{document}
